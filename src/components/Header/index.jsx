@@ -22,8 +22,12 @@ const StyledHeader = styled.header`
     }
   }
   .searchBar {
-    display: flex;
     align-items: center;
+    background: linear-gradient(to right, #c98cf1 0%, #7b78e5 100%);
+    border-radius: 0.625rem;
+    display: flex;
+    height: 3.75rem;
+    padding: 2px;
     width: 600px;
   }
 `;
