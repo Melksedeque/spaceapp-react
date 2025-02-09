@@ -3,6 +3,7 @@ import GlobalStyles from "./components/GlobalStyles";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
+import Title from "./components/Title";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -57,7 +58,7 @@ function App() {
             </nav>
           </section>
           <section className="gallery-container">
-            <h2>Navegue pela galeria</h2>
+            <Title>Navegue pela galeria</Title>
             <section className="gallery">
               <figure>
                 <img src="imagem1.jpg" alt="Imagem 1" />
@@ -74,7 +75,7 @@ function App() {
             </section>
 
             <aside className="popular-gallery">
-              <h2>Populares</h2>
+              <Title>Populares</Title>
               <figure>
                 <img src="popular1.jpg" alt="Popular 1" />
               </figure>
