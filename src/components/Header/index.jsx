@@ -21,15 +21,6 @@ const StyledHeader = styled.header`
       font-size: 1rem;
     }
   }
-  .searchBar {
-    align-items: center;
-    background: linear-gradient(to right, #c98cf1 0%, #7b78e5 100%);
-    border-radius: 0.625rem;
-    display: flex;
-    height: 3.75rem;
-    padding: 2px;
-    width: 600px;
-  }
 `;
 
 export default function Header() {
@@ -39,9 +30,7 @@ export default function Header() {
         <img src="/imagens/logo.png" alt="logo" />
         <h1 hidden>SpaceApp - React + Vite</h1>
       </div>
-      <div className="searchBar">
-        <SearchField />
-      </div>
+      <SearchField />
     </StyledHeader>
   );
 }
