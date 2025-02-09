@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const StyledSidebar = styled.aside`
   display: block;
+  height: 100vh;
   width: 13.75rem;
 `;
 const StyledList = styled.ul`
