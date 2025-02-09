@@ -5,6 +5,8 @@ const StyledNavItem = styled.li`
   color: ${(props) => (props.$active ? "#7B78E5" : "#D9D9D9")};
   cursor: pointer;
   display: flex;
+  font-family: ${(props) =>
+    props.$active ? "GandhiSansBold" : "GandhiSansRegular"};
   font-size: 1.5rem;
   gap: 1.375rem;
   line-height: 1.813rem;
