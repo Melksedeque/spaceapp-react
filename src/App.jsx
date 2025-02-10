@@ -24,14 +24,13 @@ const AppContainer = styled.div`
   width: 1440px;
 `;
 
-const MainContainer = styled.div`
+const MainContainer = styled.main`
   align-items: flex-start;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  main {
+  gap: 24px;
+  section {
     flex: 1;
-    padding-left: 2rem;
   }
 `;
 
@@ -43,7 +42,7 @@ function App() {
         <Header />
         <MainContainer>
           <Sidebar />
-          <main>
+          <section>
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
             <section className="tags-navigation">
               <nav>
@@ -96,7 +95,7 @@ function App() {
                 </figure>
               </aside>
             </section>
-          </main>
+          </section>
         </MainContainer>
       </AppContainer>
     </GradientBackground>
