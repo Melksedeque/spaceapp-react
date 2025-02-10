@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import Title from "./components/Title";
+import Gallery from "./components/Gallery";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -29,7 +30,7 @@ const MainContainer = styled.main`
   display: flex;
   flex-direction: row;
   gap: 24px;
-  section {
+  section.mainContent {
     flex: 1;
   }
 `;
@@ -42,59 +43,9 @@ function App() {
         <Header />
         <MainContainer>
           <Sidebar />
-          <section>
+          <section className="mainContent">
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
-            <section className="tags-navigation">
-              <nav>
-                <ul>
-                  <li>
-                    <a href="#">Estrelas</a>
-                  </li>
-                  <li>
-                    <a href="#">Galáxia</a>
-                  </li>
-                  <li>
-                    <a href="#">Lua</a>
-                  </li>
-                  <li>
-                    <a href="#">Planetas</a>
-                  </li>
-                  <li>
-                    <a href="#">Todas</a>
-                  </li>
-                </ul>
-              </nav>
-            </section>
-            <section className="gallery-container">
-              <Title>Navegue pela galeria</Title>
-              <section className="gallery">
-                <figure>
-                  <img src="imagem1.jpg" alt="Imagem 1" />
-                </figure>
-                <figure>
-                  <img src="imagem2.jpg" alt="Imagem 2" />
-                </figure>
-                <figure>
-                  <img src="imagem3.jpg" alt="Imagem 3" />
-                </figure>
-                <figure>
-                  <img src="imagem4.jpg" alt="Imagem 4" />
-                </figure>
-              </section>
-
-              <aside className="popular-gallery">
-                <Title align="center">Populares</Title>
-                <figure>
-                  <img src="popular1.jpg" alt="Popular 1" />
-                </figure>
-                <figure>
-                  <img src="popular2.jpg" alt="Popular 2" />
-                </figure>
-                <figure>
-                  <img src="popular3.jpg" alt="Popular 3" />
-                </figure>
-              </aside>
-            </section>
+            <Gallery />
           </section>
         </MainContainer>
       </AppContainer>
