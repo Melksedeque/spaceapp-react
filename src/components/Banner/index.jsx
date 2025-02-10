@@ -19,7 +19,7 @@ const StyledBanner = styled.section`
       color: #d9d9d9;
       font: normal 2.5rem GandhiSansRegular;
       position: absolute;
-      left: 2rem;
+      left: 4rem;
       margin: 0;
       padding: 0;
       top: 50%;
