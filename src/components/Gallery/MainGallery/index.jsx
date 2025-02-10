@@ -3,16 +3,20 @@ import Title from "../../Title";
 
 const StyledMainGallery = styled.section`
   display: flex;
+  flex: 1;
   flex-flow: row wrap;
   justify-content: space-between;
   h2 {
     width: 100%;
   }
   .main-gallery__image {
-    position: relative;
-    overflow: hidden;
     border-radius: 0.5rem;
     cursor: pointer;
+    flex: 0 1 450px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
     img {
       width: 100%;
       height: 100%;
@@ -20,12 +24,12 @@ const StyledMainGallery = styled.section`
     }
 
     figcaption {
+      background: #001634;
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       padding: 0.5rem;
-      background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
       font-size: 0.8rem;
       text-align: center;
