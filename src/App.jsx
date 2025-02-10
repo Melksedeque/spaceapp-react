@@ -16,6 +16,14 @@ const GradientBackground = styled.div`
   width: 100%;
 `;
 
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1440px;
+`;
+
 const MainContainer = styled.div`
   align-items: flex-start;
   display: flex;
@@ -31,64 +39,66 @@ function App() {
   return (
     <GradientBackground>
       <GlobalStyles />
-      <Header />
-      <MainContainer>
-        <Sidebar />
-        <main>
-          <Banner>A galeria mais completa de fotos do espaço!</Banner>
-          <section className="tags-navigation">
-            <nav>
-              <ul>
-                <li>
-                  <a href="#">Estrelas</a>
-                </li>
-                <li>
-                  <a href="#">Galáxia</a>
-                </li>
-                <li>
-                  <a href="#">Lua</a>
-                </li>
-                <li>
-                  <a href="#">Planetas</a>
-                </li>
-                <li>
-                  <a href="#">Todas</a>
-                </li>
-              </ul>
-            </nav>
-          </section>
-          <section className="gallery-container">
-            <Title>Navegue pela galeria</Title>
-            <section className="gallery">
-              <figure>
-                <img src="imagem1.jpg" alt="Imagem 1" />
-              </figure>
-              <figure>
-                <img src="imagem2.jpg" alt="Imagem 2" />
-              </figure>
-              <figure>
-                <img src="imagem3.jpg" alt="Imagem 3" />
-              </figure>
-              <figure>
-                <img src="imagem4.jpg" alt="Imagem 4" />
-              </figure>
+      <AppContainer>
+        <Header />
+        <MainContainer>
+          <Sidebar />
+          <main>
+            <Banner>A galeria mais completa de fotos do espaço!</Banner>
+            <section className="tags-navigation">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#">Estrelas</a>
+                  </li>
+                  <li>
+                    <a href="#">Galáxia</a>
+                  </li>
+                  <li>
+                    <a href="#">Lua</a>
+                  </li>
+                  <li>
+                    <a href="#">Planetas</a>
+                  </li>
+                  <li>
+                    <a href="#">Todas</a>
+                  </li>
+                </ul>
+              </nav>
             </section>
+            <section className="gallery-container">
+              <Title>Navegue pela galeria</Title>
+              <section className="gallery">
+                <figure>
+                  <img src="imagem1.jpg" alt="Imagem 1" />
+                </figure>
+                <figure>
+                  <img src="imagem2.jpg" alt="Imagem 2" />
+                </figure>
+                <figure>
+                  <img src="imagem3.jpg" alt="Imagem 3" />
+                </figure>
+                <figure>
+                  <img src="imagem4.jpg" alt="Imagem 4" />
+                </figure>
+              </section>
 
-            <aside className="popular-gallery">
-              <Title>Populares</Title>
-              <figure>
-                <img src="popular1.jpg" alt="Popular 1" />
-              </figure>
-              <figure>
-                <img src="popular2.jpg" alt="Popular 2" />
-              </figure>
-              <figure>
-                <img src="popular3.jpg" alt="Popular 3" />
-              </figure>
-            </aside>
-          </section>
-        </main>
-      </MainContainer>
+              <aside className="popular-gallery">
+                <Title>Populares</Title>
+                <figure>
+                  <img src="popular1.jpg" alt="Popular 1" />
+                </figure>
+                <figure>
+                  <img src="popular2.jpg" alt="Popular 2" />
+                </figure>
+                <figure>
+                  <img src="popular3.jpg" alt="Popular 3" />
+                </figure>
+              </aside>
+            </section>
+          </main>
+        </MainContainer>
+      </AppContainer>
     </GradientBackground>
   );
 }
