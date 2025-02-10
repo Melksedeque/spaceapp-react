@@ -1,23 +1,26 @@
 import styled from "styled-components";
+import tags from "./tags.json";
 
 const StyledFilterByTags = styled.div`
   align-items: center;
   display: flex;
+  gap: 32px;
   h3 {
     color: #d9d9d9;
     font: normal 1.5rem GandhiSansRegular;
     line-height: 1.75rem;
   }
   nav {
-    ul {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      li {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    button {
         background: #44566f;
+        border: 0 none;
         border-radius: 10px;
+        cursor: pointer;
         padding: 2px;
-        a {
+        span {
           background: #44566f;
           border-radius: 10px;
           display: block;
@@ -42,23 +45,11 @@ export default function FilterByTags() {
     <StyledFilterByTags>
       <h3>Busque por tags:</h3>
       <nav>
-        <ul>
-          <li>
-            <a href="#">Estrelas</a>
-          </li>
-          <li>
-            <a href="#">Galáxia</a>
-          </li>
-          <li>
-            <a href="#">Lua</a>
-          </li>
-          <li>
-            <a href="#">Planetas</a>
-          </li>
-          <li>
-            <a href="#">Todas</a>
-          </li>
-        </ul>
+        {tags.map((tag) => (
+          <button key={tag.id}>
+            <span>{tag.titulo}</span>
+          </button>
+        ))}
       </nav>
     </StyledFilterByTags>
   );
