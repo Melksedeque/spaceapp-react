@@ -83,7 +83,7 @@ function App() {
               </section>
 
               <aside className="popular-gallery">
-                <Title>Populares</Title>
+                <Title align="center">Populares</Title>
                 <figure>
                   <img src="popular1.jpg" alt="Popular 1" />
                 </figure>
