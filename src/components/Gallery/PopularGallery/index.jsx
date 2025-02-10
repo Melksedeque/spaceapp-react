@@ -2,16 +2,14 @@ import { styled } from "styled-components";
 import Title from "../../Title";
 
 const StyledPopularGallery = styled.section`
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
-  padding: 1rem;
   box-sizing: border-box;
+  display: flex;
+  flex: 0 1 212px;
+  flex-direction: column;
   gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
 `;
 
 export default function PopularGallery() {
