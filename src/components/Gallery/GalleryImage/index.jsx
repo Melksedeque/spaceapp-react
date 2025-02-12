@@ -1,16 +1,20 @@
 import styled from "styled-components";
 import iconExpand from "../../../../public/icones/expandir.png";
 import iconFavorite from "../../../../public/icones/favorito.png";
+import iconFavoriteSelected from "../../../../public/icones/favorito-ativo.png";
 
 const StyledGalleryImage = styled.figure`
-  border-radius: 0.5rem;
-  flex: 0 1 450px;
+  border-radius: 1.25rem;
+  flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
   height: 335px;
   margin: 0;
   overflow: hidden;
   padding: 0;
   position: relative;
-  width: ${(props) => (props.$expanded ? "90%" : "auto")};
+  img {
+    height: auto;
+    width: 100%;
+  }
   figcaption {
     align-items: flex-end;
     background: #001634;
@@ -43,12 +47,19 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({ image, gallery, expanded = false }) {
+export default function GalleryImage({
+  image,
+  gallery,
+  expanded = false,
+  favorite = false,
+  onFavorite,
+}) {
   return (
     <StyledGalleryImage
       key={image.id}
       galleryType={gallery}
       $expanded={expanded}
+      $favorite={favorite}
     >
       <img src={image.path} alt={`${image.titulo}, ${image.fonte}`} />
       <figcaption>
@@ -57,10 +68,13 @@ export default function GalleryImage({ image, gallery, expanded = false }) {
           <footer>{image.tagId}</footer>
         </div>
         <div className="buttons">
-          <button>
-            <img src={iconFavorite} alt="Ícone de Favorito" />
+          <button className="favorite" onClick={() => onFavorite(!favorite)}>
+            <img
+              src={favorite ? iconFavoriteSelected : iconFavorite}
+              alt="Ícone de Favorito"
+            />
           </button>
-          <button>
+          <button className="expand">
             <img src={iconExpand} alt="Ícone de Expandir" />
           </button>
         </div>
