@@ -3,6 +3,9 @@ import FilterByTags from "./FilterByTags";
 import MainGallery from "./MainGallery";
 import PopularGallery from "./PopularGallery";
 
+import pictures from "./fotos.json";
+import { useState } from "react";
+
 const StyledGalleryContainer = styled.div`
   align-items: flex-start;
   display: flex;
@@ -11,11 +14,12 @@ const StyledGalleryContainer = styled.div`
 `;
 
 export default function Gallery() {
+  const [galleryPictures, setGalleryPictures] = useState(pictures);
   return (
     <>
       <FilterByTags />
       <StyledGalleryContainer>
-        <MainGallery />
+        <MainGallery title="Navegue pela galeria" pictures={galleryPictures} />
         <PopularGallery />
       </StyledGalleryContainer>
     </>
