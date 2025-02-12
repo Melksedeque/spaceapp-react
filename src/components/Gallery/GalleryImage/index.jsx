@@ -10,12 +10,7 @@ const StyledGalleryImage = styled.figure`
   overflow: hidden;
   padding: 0;
   position: relative;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+  width: ${(props) => (props.$expanded ? "90%" : "auto")};
   figcaption {
     align-items: flex-end;
     background: #001634;
@@ -30,7 +25,10 @@ const StyledGalleryImage = styled.figure`
     position: absolute;
     width: 100%;
     > div {
-      padding: 1.3rem;
+      padding: 1.3rem 1rem;
+      &.text {
+        flex: 1;
+      }
     }
     h4 {
       font: 700 1.25rem GandhiSansBold;
@@ -45,14 +43,13 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({
-  key,
-  image,
-  gallery,
-  expanded = false,
-}) {
+export default function GalleryImage({ image, gallery, expanded = false }) {
   return (
-    <StyledGalleryImage key={key} galleryType={gallery} expanded>
+    <StyledGalleryImage
+      key={image.id}
+      galleryType={gallery}
+      $expanded={expanded}
+    >
       <img src={image.path} alt={`${image.titulo}, ${image.fonte}`} />
       <figcaption>
         <div className="text">
