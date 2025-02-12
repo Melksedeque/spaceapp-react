@@ -5,6 +5,7 @@ const StyledFilterByTags = styled.div`
   align-items: center;
   display: flex;
   gap: 32px;
+  padding: 2rem 0;
   h3 {
     color: #d9d9d9;
     font: normal 1.5rem GandhiSansRegular;
