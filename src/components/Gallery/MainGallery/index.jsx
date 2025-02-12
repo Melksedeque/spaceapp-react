@@ -6,8 +6,10 @@ const StyledMainGallery = styled.section`
   display: flex;
   flex: 1;
   flex-flow: row wrap;
+  gap: 50px;
   justify-content: space-between;
   h2 {
+    margin: 0;
     width: 100%;
   }
 `;
