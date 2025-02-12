@@ -3,6 +3,12 @@ import GandhiSansRegular from "./fonts/GandhiSans-Regular.otf";
 import GandhiSansBold from "./fonts/GandhiSans-Bold.otf";
 
 const GlobalStyles = createGlobalStyle`
+    ::root {
+        --dark-blue: #001634;
+        --grey: #94A3B8;
+        --light-grey: #D9D9D9;
+        --dark-grey: #414777;
+    }
     @font-face {
         font-family: 'GandhiSansRegular';
         src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
