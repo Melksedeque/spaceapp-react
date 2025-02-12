@@ -9,7 +9,7 @@ const StyledPopularGallery = styled.section`
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
 `;
 
 export default function PopularGallery() {
