@@ -3,7 +3,6 @@ import GlobalStyles from "./components/GlobalStyles";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
-import Title from "./components/Title";
 import Gallery from "./components/Gallery";
 
 const GradientBackground = styled.div`
