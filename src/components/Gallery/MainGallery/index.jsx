@@ -37,26 +37,18 @@ const StyledMainGallery = styled.section`
   }
 `;
 
-export default function MainGallery() {
+export default function MainGallery({ title, pictures = [] }) {
   return (
     <StyledMainGallery>
-      <Title>Navegue pela galeria</Title>
-      <figure className="main-gallery__image">
-        <img src="/images/image-product-1.jpg" alt="Space 001" />
-        <figcaption>Space 001</figcaption>
-      </figure>
-      <figure className="main-gallery__image">
-        <img src="/images/image-product-2.jpg" alt="Space 002" />
-        <figcaption>Space 002</figcaption>
-      </figure>
-      <figure className="main-gallery__image">
-        <img src="/images/image-product-3.jpg" alt="Space 003" />
-        <figcaption>Space 003</figcaption>
-      </figure>
-      <figure className="main-gallery__image">
-        <img src="/images/image-product-4.jpg" alt="Space 004" />
-        <figcaption>Space 004</figcaption>
-      </figure>
+      <Title>{title}</Title>
+      {pictures.map((picture) => (
+        <figure className="main-gallery__image" key={picture.id}>
+          <img src={picture.path} alt={`${picture.titulo}, ${picture.fonte}`} />
+          <figcaption>
+            {picture.titulo} in {picture.tagId}
+          </figcaption>
+        </figure>
+      ))}
     </StyledMainGallery>
   );
 }
