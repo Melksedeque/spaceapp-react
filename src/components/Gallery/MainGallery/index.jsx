@@ -19,7 +19,7 @@ export default function MainGallery({ title, pictures = [] }) {
     <StyledMainGallery>
       <Title>{title}</Title>
       {pictures.map((picture) => (
-        <GalleryImage key={picture.id} image={picture} gallery="main" />
+        <GalleryImage key={picture.id} image={picture} galleryType="main" />
       ))}
     </StyledMainGallery>
   );
