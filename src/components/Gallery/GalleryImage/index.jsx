@@ -27,9 +27,9 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({ key, image, index, gallery }) {
+export default function GalleryImage({ key, image, gallery }) {
   return (
-    <StyledGalleryImage key={key}>
+    <StyledGalleryImage key={key} galleryType={gallery}>
       <img src={image.path} alt={`${image.titulo}, ${image.fonte}`} />
       <figcaption>
         {image.titulo} in {image.tagId}
