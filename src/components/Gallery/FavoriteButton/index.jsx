@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledFavoriteButton = styled.button`
   background-color: transparent;
   border: none;
+  border-radius: 0;
   cursor: pointer;
   padding: 0;
   outline: none;
@@ -24,6 +25,7 @@ const StyledFavoriteButton = styled.button`
   }
 `;
 
+// A função favoriteClickCount deve ser um toggle na prop isFavorite do StyledFavoriteButton
 const favoriteClick = (event) => {
   event.preventDefault();
   console.log("Clicou no botão de favoritar");

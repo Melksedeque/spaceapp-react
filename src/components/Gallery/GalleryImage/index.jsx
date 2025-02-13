@@ -1,44 +1,45 @@
 import styled from "styled-components";
-import FavoriteButton from "../../FavoriteButton";
+import FavoriteButton from "../FavoriteButton";
 
 const StyledGalleryImage = styled.figure`
-  border-radius: 1.25rem;
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
   height: 335px;
   margin: 0;
-  overflow: hidden;
   padding: 0;
-  position: relative;
   img {
-    height: auto;
+    border-radius: 1.25rem 1.25rem 0 0;
     width: 100%;
   }
   figcaption {
     align-items: flex-end;
     background: #001634;
-    bottom: 0;
+    border: 0 none;
+    border-radius: 0 0 1.25rem 1.25rem;
     color: #fff;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     font-size: 0.8rem;
-    left: 0;
     padding: 0;
-    position: absolute;
     width: 100%;
     > div {
-      padding: 1.3rem 1rem;
+      padding: 0.75rem;
       &.text {
         flex: 1;
       }
     }
-    h4 {
-      font: 700 1.25rem GandhiSansBold;
+    h4,
+    footer {
+      font: 700 1rem GandhiSansBold;
       margin: 0;
+    }
+    footer {
+      font-weight: normal;
     }
     button {
       background-color: transparent;
       border: 0 none;
+      border-radius: 0;
       cursor: pointer;
       margin: 0 0.125rem;
     }
