@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import iconExpand from "../../../../public/icones/expandir.png";
-import iconFavorite from "../../../../public/icones/favorito.png";
-import iconFavoriteSelected from "../../../../public/icones/favorito-ativo.png";
+import iconExpand from "../../../assets/icones/expandir.png";
+import iconFavorite from "../../../assets/icones/favorito.png";
+import iconFavoriteSelected from "../../../assets/icones/favorito-ativo.png";
 
 const StyledGalleryImage = styled.figure`
   border-radius: 1.25rem;
