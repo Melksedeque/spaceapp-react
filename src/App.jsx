@@ -36,6 +36,8 @@ const MainContainer = styled.main`
 `;
 
 function App() {
+  const [selectedPicture, setSelectedPicture] = useState(null);
+
   return (
     <GradientBackground>
       <GlobalStyles />
@@ -49,7 +51,7 @@ function App() {
           </section>
         </MainContainer>
       </AppContainer>
-      <ZoomModal />
+      <ZoomModal foto={selectedPicture} />
     </GradientBackground>
   );
 }
