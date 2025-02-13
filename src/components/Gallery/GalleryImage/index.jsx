@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import iconExpand from "../../../assets/icones/expandir.png";
-import iconFavorite from "../../../assets/icones/favorito.png";
-import iconFavoriteSelected from "../../../assets/icones/favorito-ativo.png";
+import FavoriteButton from "../../FavoriteButton";
 
 const StyledGalleryImage = styled.figure`
   border-radius: 1.25rem;
@@ -59,7 +57,6 @@ export default function GalleryImage({
       key={image.id}
       galleryType={gallery}
       $expanded={expanded}
-      $favorite={favorite}
     >
       <img src={image.path} alt={`${image.titulo}, ${image.fonte}`} />
       <figcaption>
@@ -68,14 +65,13 @@ export default function GalleryImage({
           <footer>{image.tagId}</footer>
         </div>
         <div className="buttons">
-          <button className="favorite" onClick={() => onFavorite(!favorite)}>
-            <img
-              src={favorite ? iconFavoriteSelected : iconFavorite}
-              alt="Ícone de Favorito"
-            />
-          </button>
+          <FavoriteButton
+            favoriteIcon="/icones/favorito.png"
+            activeFavoriteIcon="icones/favorito-ativo.png"
+            isFavorite
+          />
           <button className="expand">
-            <img src={iconExpand} alt="Ícone de Expandir" />
+            <img src="/icones/expandir.png" alt="Ícone de Expandir" />
           </button>
         </div>
       </figcaption>
