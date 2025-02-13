@@ -24,13 +24,18 @@ const StyledFavoriteButton = styled.button`
   }
 `;
 
+const favoriteClick = (event) => {
+  event.preventDefault();
+  console.log("Clicou no botão de favoritar");
+};
+
 export default function FavoriteButton({
   favoriteIcon,
   activeFavoriteIcon,
   isFavorite = false,
 }) {
   return (
-    <StyledFavoriteButton $favorite={isFavorite}>
+    <StyledFavoriteButton onClick={favoriteClick}>
       <img
         src={isFavorite ? activeFavoriteIcon : favoriteIcon}
         alt="Ícone de Favorito"
