@@ -46,7 +46,7 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({ image, gallery, expanded = false }) {
+export default function GalleryImage({ image, gallery, expanded = false, onZoom }) {
   return (
     <StyledGalleryImage
       key={image.id}

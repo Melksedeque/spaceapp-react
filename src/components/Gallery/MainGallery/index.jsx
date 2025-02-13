@@ -14,12 +14,21 @@ const StyledMainGallery = styled.section`
   }
 `;
 
-export default function MainGallery({ title, pictures = [] }) {
+export default function MainGallery({
+  title,
+  pictures = [],
+  aoSelectedPicture,
+}) {
   return (
     <StyledMainGallery>
       <Title>{title}</Title>
       {pictures.map((picture) => (
-        <GalleryImage key={picture.id} image={picture} galleryType="main" />
+        <GalleryImage
+          onZoom={aoSelectedPicture}
+          key={picture.id}
+          image={picture}
+          galleryType="main"
+        />
       ))}
     </StyledMainGallery>
   );
