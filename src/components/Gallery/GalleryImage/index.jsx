@@ -45,13 +45,7 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({
-  image,
-  gallery,
-  expanded = false,
-  favorite = false,
-  onFavorite,
-}) {
+export default function GalleryImage({ image, gallery, expanded = false }) {
   return (
     <StyledGalleryImage
       key={image.id}
@@ -68,7 +62,6 @@ export default function GalleryImage({
           <FavoriteButton
             favoriteIcon="/icones/favorito.png"
             activeFavoriteIcon="icones/favorito-ativo.png"
-            isFavorite
           />
           <button className="expand">
             <img src="/icones/expandir.png" alt="Ícone de Expandir" />
