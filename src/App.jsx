@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import Gallery from "./components/Gallery";
+import ZoomModal from "./components/ZoomModal";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -48,6 +49,7 @@ function App() {
           </section>
         </MainContainer>
       </AppContainer>
+      <ZoomModal />
     </GradientBackground>
   );
 }
