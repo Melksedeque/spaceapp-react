@@ -27,6 +27,19 @@
 
 ## Descrição
 
+Este projeto é um aplicativo da web baseado em React que apresenta uma galeria de imagens relacionadas ao espaço com recursos de filtragem e pesquisa.
+
+O aplicativo Space Gallery React foi projetado para fornecer aos usuários uma maneira interativa e visualmente atraente de explorar uma coleção de imagens com tema espacial. Ele apresenta um layout responsivo com navegação na barra lateral, funcionalidade de pesquisa e uma área de galeria principal que exibe imagens populares e filtradas.
+
+Os principais recursos do aplicativo incluem:
+
+- Um layout responsivo com uma barra lateral para facilitar a navegação
+- Um campo de pesquisa para encontrar imagens específicas
+- Uma galeria principal apresentando imagens relacionadas ao espaço
+- Uma seção de galeria popular destacando as imagens em destaque
+- Filtragem baseada em tags para categorizar e classificar imagens
+- Estilo global para aparência consistente em todo o aplicativo
+
 ### Principais recursos incluem
 
 ## Tecnologias Utilizadas
