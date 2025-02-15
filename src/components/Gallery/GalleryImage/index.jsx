@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FavoriteButton from "../FavoriteButton";
+import IconButton from "../IconButton";
 
 const StyledGalleryImage = styled.figure`
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
@@ -46,7 +46,12 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({ image, gallery, expanded = false, onZoom }) {
+export default function GalleryImage({
+  image,
+  gallery,
+  expanded = false,
+  onZoom,
+}) {
   return (
     <StyledGalleryImage
       key={image.id}
@@ -60,13 +65,17 @@ export default function GalleryImage({ image, gallery, expanded = false, onZoom 
           <footer>{image.tagId}</footer>
         </div>
         <div className="buttons">
-          <FavoriteButton
-            favoriteIcon="/icones/favorito.png"
-            activeFavoriteIcon="icones/favorito-ativo.png"
+          <IconButton
+            name="favorito"
+            icon="/icones/favorito.png"
+            activeIcon="/icones/favorito-ativo.png"
+            isFavorite={false}
           />
-          <button className="expand">
-            <img src="/icones/expandir.png" alt="Ícone de Expandir" />
-          </button>
+          <IconButton
+            name="expandir"
+            icon="/icones/expandir.png"
+            isExpanded={false}
+          />
         </div>
       </figcaption>
     </StyledGalleryImage>
