@@ -3,7 +3,7 @@ import GandhiSansRegular from "./fonts/GandhiSans-Regular.otf";
 import GandhiSansBold from "./fonts/GandhiSans-Bold.otf";
 
 const GlobalStyles = createGlobalStyle`
-    ::root {
+    :root {
         --dark-blue: #001634;
         --grey: #94A3B8;
         --light-grey: #D9D9D9;
@@ -11,11 +11,18 @@ const GlobalStyles = createGlobalStyle`
     }
     @font-face {
         font-family: 'GandhiSansRegular';
-        src: local('Gandhi Sans Regular'), local('GandhiSansRegular'), url(${GandhiSansRegular});
+        src: url(${GandhiSansRegular}) format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
     }
+    
     @font-face {
         font-family: 'GandhiSansBold';
-        src: local('Gandhi Sans Bold'), local('GandhiSansBold'), url(${GandhiSansBold});
+        src: url(${GandhiSansBold}) format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
     }
     html {
         line-height: 1.15;
