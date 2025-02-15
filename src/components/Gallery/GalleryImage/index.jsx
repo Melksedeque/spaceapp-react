@@ -57,7 +57,17 @@ export default function GalleryImage({
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
-    // Aqui você pode adicionar a lógica para salvar o estado no backend ou localStorage
+
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    if (!isFavorite) {
+      favorites.push(image.id);
+    } else {
+      const index = favorites.indexOf(image.id);
+      if (index > -1) {
+        favorites.splice(index, 1);
+      }
+    }
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
   const handleExpand = () => {
