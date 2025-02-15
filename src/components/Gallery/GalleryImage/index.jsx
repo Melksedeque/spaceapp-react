@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import IconButton from "../IconButton";
+import { useState } from "react";
 
 const StyledGalleryImage = styled.figure`
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
@@ -52,6 +53,19 @@ export default function GalleryImage({
   expanded = false,
   onZoom,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const handleFavorite = () => {
+    setIsFavorite(!isFavorite);
+    // Aqui você pode adicionar a lógica para salvar o estado no backend ou localStorage
+  };
+
+  const handleExpand = () => {
+    if (onZoom) {
+      onZoom(image);
+    }
+  };
+
   return (
     <StyledGalleryImage
       key={image.id}
@@ -66,15 +80,16 @@ export default function GalleryImage({
         </div>
         <div className="buttons">
           <IconButton
-            name="favorito"
+            name="favorite"
             icon="/icones/favorito.png"
             activeIcon="/icones/favorito-ativo.png"
-            isFavorite={false}
+            isFavorite={isFavorite}
+            onClick={handleFavorite}
           />
           <IconButton
-            name="expandir"
+            name="expand"
             icon="/icones/expandir.png"
-            isExpanded={false}
+            onClick={handleExpand}
           />
         </div>
       </figcaption>
