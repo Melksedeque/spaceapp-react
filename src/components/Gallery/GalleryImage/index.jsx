@@ -81,10 +81,15 @@ export default function GalleryImage({
   return (
     <StyledGalleryImage
       key={image.id}
-      galleryType={gallery}
+      $galleryType={gallery}
       $expanded={expanded}
     >
-      <img src={image.path} alt={`${image.titulo}, ${image.fonte}`} />
+      <img
+        src={image.path || null}
+        alt={
+          image.titulo ? `${image.titulo}, ${image.fonte}` : "Imagem da galeria"
+        }
+      />
       <figcaption>
         <div className="text">
           <h4>{image.titulo}</h4>
