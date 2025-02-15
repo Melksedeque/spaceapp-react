@@ -67,11 +67,13 @@ export default function GalleryImage({
         favorites.splice(index, 1);
       }
     }
+    console.log("Botão de favorito clicado!");
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
   const handleExpand = () => {
     if (onZoom) {
+      console.log("Botão de expandir clicado!");
       onZoom(image);
     }
   };
