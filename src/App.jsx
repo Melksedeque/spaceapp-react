@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import Gallery from "./components/Gallery";
 import ZoomModal from "./components/ZoomModal";
+import { useState } from "react";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -47,7 +48,9 @@ function App() {
           <Sidebar />
           <section className="mainContent">
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
-            <Gallery onSelectedPicture={picture => setSelectedPicture(picture)} />
+            <Gallery
+              onSelectedPicture={(picture) => setSelectedPicture(picture)}
+            />
           </section>
         </MainContainer>
       </AppContainer>
