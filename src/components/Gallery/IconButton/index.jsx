@@ -25,33 +25,26 @@ const StyledIconButton = styled.button`
   }
 `;
 
-const favoriteClick = (event) => {
-  event.preventDefault();
-  console.log("Clicou no botão de favoritar");
-};
-
-const expandedClick = (event) => {
-  event.preventDefault();
-  console.log("Clicou no botão de expandir");
-};
-
 export default function IconButton({
   name,
   icon,
   activeIcon,
   isFavorite = false,
-  isExpanded = false,
+  onClick,
 }) {
   const handleClick = (event) => {
-    if (name === "favorite") {
-      favoriteClick(event);
-    } else if (name === "expand") {
-      expandedClick(event);
+    event.preventDefault();
+    if (onClick) {
+      onClick();
     }
   };
+
   return (
     <StyledIconButton onClick={handleClick}>
-      <img src={isFavorite ? activeIcon : icon} alt={`Ícone de ${name}`} />
+      <img
+        src={name === "favorite" && isFavorite ? activeIcon : icon}
+        alt={`Ícone de ${name}`}
+      />
     </StyledIconButton>
   );
 }
