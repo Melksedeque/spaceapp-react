@@ -34,7 +34,6 @@ const expandedClick = (event) => {
   event.preventDefault();
   console.log("Clicou no botão de expandir");
 };
-k;
 
 export default function IconButton({
   name,
