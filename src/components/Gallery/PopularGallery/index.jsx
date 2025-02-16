@@ -14,7 +14,7 @@ const StyledPopularGallery = styled.section`
 
 export default function PopularGallery() {
   return (
-    <StyledPopularGallery galleryType="popular">
+    <StyledPopularGallery data-gallery="popular">
       <Title align="center">Popular</Title>
       <figure className="main-gallery__image">
         <img src="/images/image-product-1.jpg" alt="Space 005" />
