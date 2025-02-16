@@ -10,7 +10,7 @@ const StyledIconButton = styled.button`
   overflow: visible;
   padding: 0;
   img {
-    border-radius: 0;
+    display: block;
   }
   &:hover {
     opacity: 0.7;
