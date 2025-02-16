@@ -10,7 +10,7 @@ const StyledGalleryContainer = styled.div`
   align-items: flex-start;
   display: flex;
   flex-flow: row wrap;
-  gap: 24px;
+  gap: 16px;
 `;
 
 export default function Gallery({ onSelectedPicture }) {
