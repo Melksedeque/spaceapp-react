@@ -17,14 +17,14 @@ const StyledMainGallery = styled.section`
 export default function MainGallery({
   title,
   pictures = [],
-  aoSelectedPicture,
+  onSelectedPicture,
 }) {
   return (
     <StyledMainGallery>
       <Title>{title}</Title>
       {pictures.map((picture) => (
         <GalleryImage
-          onZoom={aoSelectedPicture}
+          onZoom={onSelectedPicture}
           key={picture.id}
           image={picture}
           data-gallery="main"
