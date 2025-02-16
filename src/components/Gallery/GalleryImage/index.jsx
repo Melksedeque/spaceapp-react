@@ -7,7 +7,7 @@ const StyledGalleryImage = styled.figure`
   height: auto;
   margin: 0;
   padding: 0;
-  img {
+  > img {
     border-radius: 1.25rem 1.25rem 0 0;
     display: block;
     width: 100%;
