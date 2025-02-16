@@ -81,7 +81,7 @@ export default function GalleryImage({
   return (
     <StyledGalleryImage
       key={image.id}
-      $galleryType={gallery}
+      data-gallery={gallery}
       $expanded={expanded}
     >
       <img
