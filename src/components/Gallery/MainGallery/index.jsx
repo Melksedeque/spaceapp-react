@@ -27,7 +27,7 @@ export default function MainGallery({
           onZoom={aoSelectedPicture}
           key={picture.id}
           image={picture}
-          galleryType="main"
+          data-gallery="main"
         />
       ))}
     </StyledMainGallery>
