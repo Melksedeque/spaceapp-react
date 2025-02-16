@@ -2,26 +2,18 @@ import styled from "styled-components";
 
 const StyledIconButton = styled.button`
   background-color: transparent;
-  border: none;
+  border: 0 none;
   border-radius: 0;
   cursor: pointer;
-  padding: 0;
+  line-height: 0;
   outline: none;
-  width: 20px;
-  height: 20px;
-
+  overflow: visible;
+  padding: 0;
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    border-radius: 0;
   }
-
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: 0.7;
-    &:active {
-      opacity: 0.6;
-    }
   }
 `;
 
