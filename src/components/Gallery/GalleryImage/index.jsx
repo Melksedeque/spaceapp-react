@@ -35,6 +35,7 @@ const StyledGalleryImage = styled.figure`
         flex-flow: row nowrap;
         gap: 1rem;
         justify-content: flex-end;
+        padding: 1rem 1.5rem;
       }
     }
     h4,
@@ -48,19 +49,17 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({
-  image,
-  gallery,
-  expanded = false,
-  onZoom,
-}) {
-  const [isFavorite, setIsFavorite] = useState(false);
+export default function GalleryImage({ image, gallery, expanded = false }) {
+  const [isFavorite, setIsFavorite] = useState(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    return favorites.includes(image.id);
+  });
 
   const handleFavorite = () => {
-    setIsFavorite(!isFavorite);
+    setIsFavorite((prev) => !prev);
 
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    if (!isFavorite) {
+    if (!favorites.includes(image.id)) {
       favorites.push(image.id);
     } else {
       const index = favorites.indexOf(image.id);
@@ -73,10 +72,7 @@ export default function GalleryImage({
   };
 
   const handleExpand = () => {
-    if (onZoom) {
-      console.log("Botão de expandir clicado!");
-      onZoom(image);
-    }
+    console.log("Botão de expandir clicado!");
   };
 
   return (
