@@ -1,13 +1,12 @@
-export default function ZoomModal({foto}) {
+export default function ZoomModal({ picture }) {
   return (
     <>
-      <dialog open={!!foto}>
-        <img src="" alt="" />
+      <dialog open={!!picture}>
+        <p>
+          Olá, eu sou um <strong>modal</strong>!
+        </p>
         <form method="dialog">
-          <p>
-            Lucky number is: <strong>25</strong>
-          </p>
-          <button>Close dialog</button>
+          <button>Ok!</button>
         </form>
       </dialog>
     </>
