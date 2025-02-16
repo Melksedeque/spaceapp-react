@@ -5,6 +5,7 @@ import PopularGallery from "./PopularGallery";
 
 import pictures from "./fotos.json";
 import { useState } from "react";
+import ZoomModal from "../ZoomModal";
 
 const StyledGalleryContainer = styled.div`
   align-items: flex-start;
@@ -15,6 +16,7 @@ const StyledGalleryContainer = styled.div`
 
 export default function Gallery({ onSelectedPicture }) {
   const [galleryPictures, setGalleryPictures] = useState(pictures);
+  const [selectedPicture, setSelectedPicture] = useState(pictures[0]);
   return (
     <>
       <FilterByTags />
@@ -26,6 +28,7 @@ export default function Gallery({ onSelectedPicture }) {
         />
         <PopularGallery />
       </StyledGalleryContainer>
+      <ZoomModal picture={selectedPicture} />
     </>
   );
 }
