@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import search from "./search.png";
+import search from "./search-icon.png";
 
 const StyledSearchBox = styled.div`
   background: linear-gradient(90deg, #c98cf1 0%, #7b78e5 100%);
