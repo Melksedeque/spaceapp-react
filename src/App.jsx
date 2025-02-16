@@ -4,8 +4,6 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import Gallery from "./components/Gallery";
-import ZoomModal from "./components/ZoomModal";
-import { useState } from "react";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -37,8 +35,6 @@ const MainContainer = styled.main`
 `;
 
 function App() {
-  const [selectedPicture, setSelectedPicture] = useState(null);
-
   return (
     <GradientBackground>
       <GlobalStyles />
@@ -54,7 +50,6 @@ function App() {
           </section>
         </MainContainer>
       </AppContainer>
-      <ZoomModal foto={selectedPicture} />
     </GradientBackground>
   );
 }
