@@ -41,13 +41,17 @@ const StyledFilterByTags = styled.div`
   }
 `;
 
-export default function FilterByTags() {
+export default function FilterByTags({ selectedTag, onTagSelect }) {
   return (
     <StyledFilterByTags>
       <h3>Busque por tags:</h3>
       <nav>
         {tags.map((tag) => (
-          <button key={tag.id}>
+          <button
+            key={tag.id}
+            onClick={() => onTagSelect(tag.id)}
+            className={selectedTag === tag.id ? "isActive" : ""}
+          >
             <span>{tag.titulo}</span>
           </button>
         ))}
