@@ -34,7 +34,13 @@ const Overlay = styled.div`
   }
 `;
 
-export default function ZoomModal({ picture }) {
+export default function ZoomModal({ picture, onClose }) {
+  const handleClose = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
+
   return (
     <>
       {picture && (
@@ -42,7 +48,11 @@ export default function ZoomModal({ picture }) {
           <dialog open={!!picture}>
             <GalleryImage image={picture} expanded={true} />
             <form method="dialog">
-              <IconButton name="close" icon="/icones/fechar.png" />
+              <IconButton
+                name="close"
+                icon="/icones/fechar.png"
+                onClick={handleClose}
+              />
             </form>
           </dialog>
         </Overlay>
