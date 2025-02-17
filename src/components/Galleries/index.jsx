@@ -23,6 +23,10 @@ export default function Galleries() {
   const [selectedTag, setSelectedTag] = useState(0);
   const filteredPictures = filterImagesByTag(galleryPictures, selectedTag);
 
+  const handleCloseModal = () => {
+    setSelectedPicture(null);
+  };
+
   return (
     <>
       <FilterByTags selectedTag={selectedTag} onTagSelect={setSelectedTag} />
@@ -42,7 +46,7 @@ export default function Galleries() {
           dataGallery="popular"
         />
       </StyledGalleryContainer>
-      <ZoomModal picture={selectedPicture} />
+      <ZoomModal picture={selectedPicture} onClose={handleCloseModal} />
     </>
   );
 }
