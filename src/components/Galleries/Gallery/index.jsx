@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import Title from "../../Title";
-import GalleryImage from "../GalleryImage";
+import Image from "../Image";
 
-const StyledImageGallery = styled.section`
+const StyledGallery = styled.section`
   display: flex;
   flex: 1;
   flex-flow: row wrap;
@@ -24,7 +24,7 @@ const StyledImageGallery = styled.section`
   }
 `;
 
-export default function ImageGallery({
+export default function Gallery({
   title,
   alignment,
   pictures = [],
@@ -32,10 +32,10 @@ export default function ImageGallery({
   dataGallery,
 }) {
   return (
-    <StyledImageGallery data-gallery-type={dataGallery}>
+    <StyledGallery data-gallery-type={dataGallery}>
       <Title align={alignment}>{title}</Title>
       {pictures.map((picture) => (
-        <GalleryImage
+        <Image
           onZoom={onSelectedPicture}
           key={picture.id}
           image={picture}
@@ -43,6 +43,6 @@ export default function ImageGallery({
         />
       ))}
       {dataGallery === "popular" && <button>Ver mais</button>}
-    </StyledImageGallery>
+    </StyledGallery>
   );
 }

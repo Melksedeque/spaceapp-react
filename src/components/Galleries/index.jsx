@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FilterByTags from "./FilterByTags";
-import ImageGallery from "./ImageGallery";
+import Gallery from "./Gallery";
 
 import pictures from "./fotos.json";
 import populars from "./populars.json";
@@ -15,7 +15,7 @@ const StyledGalleryContainer = styled.div`
   gap: 16px;
 `;
 
-export default function Gallery() {
+export default function Galleries() {
   const [galleryPictures, setGalleryPictures] = useState(pictures);
   const [popularGalleryPictures, setPopularGalleryPictures] =
     useState(populars);
@@ -27,14 +27,14 @@ export default function Gallery() {
     <>
       <FilterByTags selectedTag={selectedTag} onTagSelect={setSelectedTag} />
       <StyledGalleryContainer>
-        <ImageGallery
+        <Gallery
           alignment="left"
           title="Navegue pela galeria"
           pictures={filteredPictures}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
           dataGallery="main"
         />
-        <ImageGallery
+        <Gallery
           alignment="center"
           title="Populares"
           pictures={popularGalleryPictures.slice(0, 5)}

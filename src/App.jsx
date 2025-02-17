@@ -3,7 +3,7 @@ import GlobalStyles from "./components/GlobalStyles";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
-import Gallery from "./components/Gallery";
+import Galleries from "./components/Galleries";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -44,7 +44,7 @@ function App() {
           <Sidebar />
           <section className="mainContent">
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
-            <Gallery />
+            <Galleries />
           </section>
         </MainContainer>
       </AppContainer>

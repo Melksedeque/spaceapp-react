@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import GalleryImage from "../Gallery/GalleryImage";
+import GalleryImage from "../Galleries/Image";
 
 const Overlay = styled.div`
   align-items: center;

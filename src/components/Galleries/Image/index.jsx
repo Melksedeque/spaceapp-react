@@ -3,7 +3,7 @@ import IconButton from "../IconButton";
 import { useState } from "react";
 import { getTagById } from "../../../utils/galleryUtils";
 
-const StyledGalleryImage = styled.figure`
+const StyledImage = styled.figure`
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
   height: auto;
   margin: 0;
@@ -58,12 +58,7 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({
-  image,
-  expanded = false,
-  onZoom,
-  dataGallery,
-}) {
+export default function age({ image, expanded = false, onZoom, dataGallery }) {
   const [isFavorite, setIsFavorite] = useState(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     return favorites.includes(image.id);
@@ -90,11 +85,7 @@ export default function GalleryImage({
   };
 
   return (
-    <StyledGalleryImage
-      key={image.id}
-      $expanded={expanded}
-      data-gallery={dataGallery}
-    >
+    <StyledImage key={image.id} $expanded={expanded} data-gallery={dataGallery}>
       <img
         src={image.path || null}
         alt={
@@ -124,6 +115,6 @@ export default function GalleryImage({
           )}
         </div>
       </figcaption>
-    </StyledGalleryImage>
+    </StyledImage>
   );
 }

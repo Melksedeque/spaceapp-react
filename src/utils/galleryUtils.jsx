@@ -1,4 +1,4 @@
-import tags from "../components/Gallery/FilterByTags/tags.json";
+import tags from "../components/Galleries/FilterByTags/tags.json";
 
 export const getTagById = (tagId) => {
   const tag = tags.find((tag) => tag.id === tagId);
