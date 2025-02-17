@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import IconButton from "../IconButton";
 import { useState } from "react";
+import { getTagById } from "../../../utils/galleryUtils";
 
 const StyledGalleryImage = styled.figure`
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
@@ -38,13 +39,12 @@ const StyledGalleryImage = styled.figure`
         padding: 1rem 1.5rem;
       }
     }
-    h4,
-    footer {
-      font: 700 1rem GandhiSansBold;
+    h4 {
+      font: 700 1.25rem GandhiSansBold;
       margin: 0;
     }
     footer {
-      font-weight: normal;
+      font: normal 1rem GandhiSansRegular;
     }
   }
   &[data-gallery="popular"] {
@@ -104,7 +104,7 @@ export default function GalleryImage({
       <figcaption>
         <div className="text">
           <h4>{image.titulo}</h4>
-          <footer>{image.tagId}</footer>
+          <footer>{getTagById(image.tagId)}</footer>
         </div>
         <div className="buttons">
           <IconButton
