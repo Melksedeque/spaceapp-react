@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import GalleryImage from "../Galleries/Image";
+import IconButton from "../Galleries/IconButton";
 
 const Overlay = styled.div`
   align-items: center;
@@ -14,6 +15,22 @@ const Overlay = styled.div`
   top: 0;
   width: 100%;
   dialog {
+    background: transparent;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+    width: 1000px;
+    form {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
   }
 `;
 
@@ -25,7 +42,7 @@ export default function ZoomModal({ picture }) {
           <dialog open={!!picture}>
             <GalleryImage image={picture} expanded={true} />
             <form method="dialog">
-              <button>Ok!</button>
+              <IconButton name="close" icon="/icones/fechar.png" />
             </form>
           </dialog>
         </Overlay>
