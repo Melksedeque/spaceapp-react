@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import Title from "../../Title";
 import Image from "../Image";
+import SeeMoreButton from "../../SeeMoreButton";
 
 const StyledGallery = styled.section`
   display: flex;
@@ -42,7 +43,7 @@ export default function Gallery({
           dataGallery={dataGallery}
         />
       ))}
-      {dataGallery === "popular" && <button>Ver mais</button>}
+      {dataGallery === "popular" && <SeeMoreButton />}
     </StyledGallery>
   );
 }
