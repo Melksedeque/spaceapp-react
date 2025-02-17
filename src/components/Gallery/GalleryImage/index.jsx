@@ -20,8 +20,8 @@ const StyledGalleryImage = styled.figure`
     color: #fff;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
     font-size: 0.8rem;
+    justify-content: space-between;
     padding: 0;
     width: 100%;
     > div {
@@ -47,13 +47,22 @@ const StyledGalleryImage = styled.figure`
       font-weight: normal;
     }
   }
+  &[data-gallery="popular"] {
+    flex: 1;
+    > img {
+      border-radius: 1.25rem;
+    }
+    figcaption {
+      display: none;
+    }
+  }
 `;
 
 export default function GalleryImage({
   image,
-  gallery,
   expanded = false,
   onZoom,
+  dataGallery,
 }) {
   const [isFavorite, setIsFavorite] = useState(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
@@ -72,7 +81,6 @@ export default function GalleryImage({
         favorites.splice(index, 1);
       }
     }
-    console.log("Botão de favorito clicado!");
     localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
@@ -84,8 +92,8 @@ export default function GalleryImage({
   return (
     <StyledGalleryImage
       key={image.id}
-      data-gallery={gallery}
       $expanded={expanded}
+      data-gallery={dataGallery}
     >
       <img
         src={image.path || null}
@@ -106,12 +114,14 @@ export default function GalleryImage({
             isFavorite={isFavorite}
             onClick={handleFavorite}
           />
-          {!expanded && <IconButton
-            name="expand"
-            icon="/icones/expandir.png"
-            onClick={handleExpand}
-            aria-hidden={expanded}
-          />}
+          {!expanded && (
+            <IconButton
+              name="expand"
+              icon="/icones/expandir.png"
+              onClick={handleExpand}
+              aria-hidden={expanded}
+            />
+          )}
         </div>
       </figcaption>
     </StyledGalleryImage>
