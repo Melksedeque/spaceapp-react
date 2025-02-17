@@ -44,9 +44,7 @@ function App() {
           <Sidebar />
           <section className="mainContent">
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
-            <Gallery
-              onSelectedPicture={(picture) => setSelectedPicture(picture)}
-            />
+            <Gallery />
           </section>
         </MainContainer>
       </AppContainer>
