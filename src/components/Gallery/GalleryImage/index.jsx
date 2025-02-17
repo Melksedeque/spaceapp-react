@@ -51,7 +51,7 @@ const StyledGalleryImage = styled.figure`
 
 export default function GalleryImage({
   image,
-  gallery,
+  data-gallery,
   expanded = false,
   onZoom,
 }) {
