@@ -14,9 +14,9 @@ const StyledGalleryContainer = styled.div`
   gap: 16px;
 `;
 
-export default function Gallery({ onSelectedPicture }) {
+export default function Gallery() {
   const [galleryPictures, setGalleryPictures] = useState(pictures);
-  const [selectedPicture, setSelectedPicture] = useState(pictures[0]);
+  const [selectedPicture, setSelectedPicture] = useState(null);
   return (
     <>
       <FilterByTags />
@@ -24,7 +24,7 @@ export default function Gallery({ onSelectedPicture }) {
         <MainGallery
           title="Navegue pela galeria"
           pictures={galleryPictures}
-          onSelectedPicture
+          onSelectedPicture={(picture) => setSelectedPicture(picture)}
         />
         <PopularGallery />
       </StyledGalleryContainer>
