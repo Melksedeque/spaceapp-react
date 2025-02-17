@@ -16,26 +16,25 @@ const StyledFilterByTags = styled.div`
     gap: 10px;
     list-style: none;
     button {
+      background: #44566f;
+      border: 0 none;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 2px;
+      span {
         background: #44566f;
-        border: 0 none;
         border-radius: 10px;
-        cursor: pointer;
-        padding: 2px;
-        span {
-          background: #44566f;
-          border-radius: 10px;
-          display: block;
-          font: normal 1rem GandhiSansRegular;
-          color: #d9d9d9;
-          padding: 10px 8px;
-          text-decoration: none;
-        }
-        &:hover {
-          background: linear-gradient(90deg, #c98cf1 0%, #7b78e5 100%);
-        }
-        &.isActive {
-          background: linear-gradient(90deg, #c98cf1 0%, #7b78e5 100%);
-        }
+        display: block;
+        font: normal 1rem GandhiSansRegular;
+        color: #d9d9d9;
+        padding: 10px 8px;
+        text-decoration: none;
+      }
+      &:hover {
+        background: linear-gradient(90deg, #c98cf1 0%, #7b78e5 100%);
+      }
+      &.isActive {
+        background: linear-gradient(90deg, #c98cf1 0%, #7b78e5 100%);
       }
     }
   }
