@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import FilterByTags from "./FilterByTags";
-import MainGallery from "./MainGallery";
-import PopularGallery from "./PopularGallery";
+import ImageGallery from "./ImageGallery";
 
 import pictures from "./fotos.json";
 import { useState } from "react";
@@ -21,12 +20,20 @@ export default function Gallery() {
     <>
       <FilterByTags />
       <StyledGalleryContainer>
-        <MainGallery
+        <ImageGallery
+          alignment="left"
           title="Navegue pela galeria"
           pictures={galleryPictures}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
+          dataGallery="main"
         />
-        <PopularGallery />
+        <ImageGallery
+          alignment="center"
+          title="Populares"
+          pictures={galleryPictures.slice(0, 5)}
+          onSelectedPicture={(picture) => setSelectedPicture(picture)}
+          dataGallery="popular"
+        />
       </StyledGalleryContainer>
       <ZoomModal picture={selectedPicture} />
     </>
