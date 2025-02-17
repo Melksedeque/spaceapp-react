@@ -106,11 +106,12 @@ export default function GalleryImage({
             isFavorite={isFavorite}
             onClick={handleFavorite}
           />
-          <IconButton
+          {!expanded && <IconButton
             name="expand"
             icon="/icones/expandir.png"
             onClick={handleExpand}
-          />
+            aria-hidden={expanded}
+          />}
         </div>
       </figcaption>
     </StyledGalleryImage>
