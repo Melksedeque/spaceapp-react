@@ -3,6 +3,7 @@ import FilterByTags from "./FilterByTags";
 import ImageGallery from "./ImageGallery";
 
 import pictures from "./fotos.json";
+import populars from "./populars.json";
 import { useState } from "react";
 import ZoomModal from "../ZoomModal";
 
@@ -15,6 +16,7 @@ const StyledGalleryContainer = styled.div`
 
 export default function Gallery() {
   const [galleryPictures, setGalleryPictures] = useState(pictures);
+  const [popularGalleryPictures, setPopularGalleryPictures] = useState(populars);
   const [selectedPicture, setSelectedPicture] = useState(null);
   return (
     <>
@@ -30,7 +32,7 @@ export default function Gallery() {
         <ImageGallery
           alignment="center"
           title="Populares"
-          pictures={galleryPictures.slice(0, 5)}
+          pictures={popularGalleryPictures.slice(0, 5)}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
           dataGallery="popular"
         />
