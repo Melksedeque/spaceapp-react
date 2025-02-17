@@ -49,7 +49,12 @@ const StyledGalleryImage = styled.figure`
   }
 `;
 
-export default function GalleryImage({ image, gallery, expanded = false }) {
+export default function GalleryImage({
+  image,
+  gallery,
+  expanded = false,
+  onZoom,
+}) {
   const [isFavorite, setIsFavorite] = useState(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     return favorites.includes(image.id);
@@ -73,6 +78,7 @@ export default function GalleryImage({ image, gallery, expanded = false }) {
 
   const handleExpand = () => {
     console.log("Botão de expandir clicado!");
+    onZoom(image);
   };
 
   return (
