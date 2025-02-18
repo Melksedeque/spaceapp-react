@@ -32,7 +32,7 @@ export default function IconButton({
   };
 
   return (
-    <StyledIconButton onClick={handleClick}>
+    <StyledIconButton onClick={handleClick} data-name={name}>
       <img
         src={name === "favorite" && isFavorite ? activeIcon : icon}
         alt={`Ícone de ${name}`}
