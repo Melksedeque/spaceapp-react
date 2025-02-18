@@ -54,6 +54,50 @@ const StyledImage = styled.figure`
     }
     figcaption {
       display: none;
+      opacity: 0;
+      transition: all 0.25s ease-in-out;
+    }
+    &:hover {
+      cursor: pointer;
+      position: relative;
+      figcaption {
+        background-color: rgba(0, 22, 52, 0.7);
+        border-radius: 1.25rem;
+        bottom: 0;
+        display: flex;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: 0;
+        h4,
+        footer,
+        .text,
+        .buttons button[data-name="favorite"] {
+          display: none;
+        }
+        .buttons {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          justify-content: center;
+          padding: 0;
+          width: 100%;
+          button[data-name="expand"] {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            width: 100%;
+            img {
+              width: 1.5rem;
+            }
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
     }
   }
 `;
