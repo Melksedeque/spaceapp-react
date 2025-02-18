@@ -41,7 +41,7 @@ export default function Galleries() {
         <Gallery
           alignment="center"
           title="Populares"
-          pictures={popularGalleryPictures.slice(0, 5)}
+          pictures={popularGalleryPictures}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
           dataGallery="popular"
         />
