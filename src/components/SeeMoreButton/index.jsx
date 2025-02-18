@@ -23,10 +23,10 @@ const StyledSeeMore = styled.div`
   }
 `;
 
-export default function SeeMoreButton() {
+export default function SeeMoreButton({ onClick }) {
   return (
     <StyledSeeMore>
-      <button>Ver mais</button>
+      <button onClick={onClick}>Ver mais</button>
     </StyledSeeMore>
   );
 }
