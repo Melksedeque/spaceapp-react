@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   background-color: var(--dark-blue);
   color: #fff;
-  font: 400 1rem GandhiSansRegular;
+  font: 500 1rem GandhiSansRegular;
   margin-top: 5rem;
   padding: 1rem 2rem;
   text-align: center;
@@ -34,12 +34,19 @@ const StyledFooter = styled.footer`
       }
     }
   }
-  .copyright {
-  }
   .responsibles {
     display: flex;
     flex-direction: column;
     text-align: right;
+    p {
+      a {
+        color: #fff;
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 `;
 
