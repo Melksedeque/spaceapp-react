@@ -5,11 +5,13 @@ import { getTagById } from "../../../utils/galleryUtils";
 
 const StyledImage = styled.figure`
   flex: 0 1 ${(props) => (props.$expanded == true ? "90%" : "450px")};
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   height: auto;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   > img {
-    border-radius: 1.25rem 1.25rem 0 0;
     display: block;
     width: 100%;
   }
@@ -17,7 +19,6 @@ const StyledImage = styled.figure`
     align-items: flex-end;
     background: #001634;
     border: 0 none;
-    border-radius: 0 0 1.25rem 1.25rem;
     color: #fff;
     display: flex;
     flex-flow: row nowrap;
