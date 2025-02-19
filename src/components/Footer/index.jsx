@@ -15,6 +15,25 @@ const StyledFooter = styled.footer`
   p {
     margin: 0;
   }
+  nav {
+    ul {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      gap: 2.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        a {
+          display: block;
+          img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
   .copyright {
   }
   .responsibles {
