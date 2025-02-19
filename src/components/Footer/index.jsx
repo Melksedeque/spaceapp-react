@@ -24,14 +24,6 @@ const StyledFooter = styled.footer`
       list-style: none;
       margin: 0;
       padding: 0;
-      li {
-        a {
-          display: block;
-          img {
-            display: block;
-          }
-        }
-      }
     }
   }
   .responsibles {
@@ -43,6 +35,7 @@ const StyledFooter = styled.footer`
         color: #fff;
         text-decoration: underline;
         &:hover {
+          color: #7b78e5;
           text-decoration: none;
         }
       }
