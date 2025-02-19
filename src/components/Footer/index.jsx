@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SocialIcon from "../SocialIcon";
 
 const StyledFooter = styled.footer`
   align-items: center;
@@ -29,20 +30,52 @@ export default function Footer() {
       <nav>
         <ul>
           <li>
-            <a href="#">Facebook</a>
+            <SocialIcon
+              icon="/imagens/sociais/facebook.svg"
+              name="Facebook"
+              link="https://www.facebook.com/"
+            />
           </li>
           <li>
-            <a href="#">Twitter</a>
+            <SocialIcon
+              icon="/imagens/sociais/instagram.svg"
+              name="Instagram"
+              link="https://www.instagram.com/"
+            />
           </li>
           <li>
-            <a href="#">Instagram</a>
+            <SocialIcon
+              icon="/imagens/sociais/twitter.svg"
+              name="Twitter"
+              link="https://www.twitter.com/"
+            />
           </li>
         </ul>
       </nav>
       <p className="copyright">© 2025 - All rights reserved</p>
       <div className="responsibles">
-        <p>Designed by Alura.</p>
-        <p>Developed by Melksedeque.</p>
+        <p>
+          Designed by{" "}
+          <a
+            href="http://alura.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Alura
+          </a>
+          .
+        </p>
+        <p>
+          Developed by{" "}
+          <a
+            href="http://github.com/Melksedeque"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Melksedeque
+          </a>
+          .
+        </p>
       </div>
     </StyledFooter>
   );
