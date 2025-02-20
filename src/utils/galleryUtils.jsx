@@ -10,6 +10,20 @@ export const filterImagesByTag = (images, selectedTagId) => {
   return images.filter((image) => image.tagId === selectedTagId);
 };
 
+export const filterImagesBySearch = (images, searchTerm) => {
+  if (!searchTerm) return images;
+
+  const normalizedSearch = searchTerm.toLowerCase().trim();
+  return images.filter((image) =>
+    image.titulo.toLowerCase().includes(normalizedSearch)
+  );
+};
+
+export const filterImages = (images, selectedTagId, searchTerm) => {
+  const filteredByTag = filterImagesByTag(images, selectedTagId);
+  return filterImagesBySearch(filteredByTag, searchTerm);
+};
+
 export const getTagsWithCount = (images) => {
   return tags.map((tag) => ({
     ...tag,
