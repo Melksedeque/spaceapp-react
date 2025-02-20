@@ -24,8 +24,10 @@ export default function Header({ onSearch }) {
   return (
     <StyledHeader>
       <div className="logo">
-        <img src="/imagens/logo.png" alt="logo" />
-        <h1 hidden>SpaceApp - React + Vite</h1>
+        <a href="/" title="Home do SpaceApp">
+          <img src="/imagens/logo.png" alt="logo" />
+          <h1 hidden>SpaceApp - React + Vite</h1>
+        </a>
       </div>
       <SearchField onSearch={onSearch} />
     </StyledHeader>
