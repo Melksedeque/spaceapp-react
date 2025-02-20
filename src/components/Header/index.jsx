@@ -20,14 +20,14 @@ const StyledHeader = styled.header`
   }
 `;
 
-export default function Header() {
+export default function Header({ onSearch }) {
   return (
     <StyledHeader>
       <div className="logo">
         <img src="/imagens/logo.png" alt="logo" />
         <h1 hidden>SpaceApp - React + Vite</h1>
       </div>
-      <SearchField />
+      <SearchField onSearch={onSearch} />
     </StyledHeader>
   );
 }
