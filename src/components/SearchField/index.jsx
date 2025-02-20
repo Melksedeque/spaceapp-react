@@ -35,10 +35,17 @@ const StyledSearchIcon = styled.img`
   height: 38px;
 `;
 
-export default function SearchField() {
+export default function SearchField({ onSearch }) {
+  const handleSearch = (event) => {
+    onSearch(event.target.value);
+  };
+
   return (
     <StyledSearchBox>
-      <StyledSearchField placeholder="O que você procura?" />
+      <StyledSearchField
+        placeholder="O que você procura?"
+        onChange={handleSearch}
+      />
       <StyledSearchIcon src={search} alt="Ícone de lupa para busca" />
     </StyledSearchBox>
   );
