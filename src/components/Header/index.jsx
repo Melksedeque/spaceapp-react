@@ -15,9 +15,6 @@ const StyledHeader = styled.header`
       max-width: 100%;
     }
     h1 {
-      /**
-        IMPORTAR FONTE PADRÃO
-        */
       font-size: 1rem;
     }
   }
