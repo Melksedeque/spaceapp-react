@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Banner from "./components/Banner";
 import Galleries from "./components/Galleries";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 const GradientBackground = styled.div`
   background: linear-gradient(
@@ -36,16 +37,22 @@ const MainContainer = styled.main`
 `;
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   return (
     <GradientBackground>
       <GlobalStyles />
       <AppContainer>
-        <Header />
+        <Header onSearch={handleSearch} />
         <MainContainer>
           <Sidebar />
           <section className="mainContent">
             <Banner>A galeria mais completa de fotos do espaço!</Banner>
-            <Galleries />
+            <Galleries searchTerm={searchTerm} />
           </section>
         </MainContainer>
       </AppContainer>
