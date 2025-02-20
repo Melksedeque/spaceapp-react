@@ -6,7 +6,7 @@ import pictures from "./fotos.json";
 import populars from "./populars.json";
 import { useState } from "react";
 import ZoomModal from "../ZoomModal";
-import { filterImagesByTag } from "../../utils/galleryUtils";
+import { filterImages } from "../../utils/galleryUtils";
 
 const StyledGalleryContainer = styled.div`
   align-items: flex-start;
@@ -15,13 +15,18 @@ const StyledGalleryContainer = styled.div`
   gap: 16px;
 `;
 
-export default function Galleries() {
+export default function Galleries({ searchTerm }) {
   const [galleryPictures, setGalleryPictures] = useState(pictures);
   const [popularGalleryPictures, setPopularGalleryPictures] =
     useState(populars);
   const [selectedPicture, setSelectedPicture] = useState(null);
   const [selectedTag, setSelectedTag] = useState(0);
-  const filteredPictures = filterImagesByTag(galleryPictures, selectedTag);
+
+  const filteredPictures = filterImages(
+    galleryPictures,
+    selectedTag,
+    searchTerm
+  );
 
   const handleCloseModal = () => {
     setSelectedPicture(null);
