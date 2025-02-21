@@ -182,7 +182,7 @@ Isso iniciará o servidor de desenvolvimento Vite e você poderá visualizar o a
 
 ## Projeto ao vivo
 
-[Link do Projeto no Vercel]()
+[Link do Projeto no Vercel](https://spaceapp-react-beige.vercel.app/)
 
 ## Licença
 
