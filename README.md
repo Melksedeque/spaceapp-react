@@ -44,9 +44,38 @@ Os principais recursos do aplicativo incluem:
 
 ## Tecnologias Utilizadas
 
+- React 19
+- Styled Components
+- Vite
+- ESLint para linting
+- Node.js e npm para gerenciamento de dependências
+
 ## Estrutura de Pastas
 
+```
+src/
+├── components/
+│   ├── Banner/
+│   ├── Footer/
+│   ├── Galleries/
+│   ├── GlobalStyles/
+│   ├── Header/
+│   ├── SearchField/
+│   ├── Sidebar/
+│   ├── Title/
+│   └── ZoomModal/
+├── utils/
+│   └── galleryUtils.jsx
+├── App.jsx
+└── main.jsx
+```
+
 ### Arquivos Principais:
+
+- `src/App.jsx`: Componente principal da aplicação
+- `src/main.jsx`: Ponto de entrada da aplicação
+- `src/components/`: Pasta contendo todos os componentes reutilizáveis
+- `src/utils/`: Utilitários e funções auxiliares
 
 ## Como Instalar e Rodar o Projeto
 
