@@ -44,7 +44,7 @@ Os principais recursos do aplicativo incluem:
 
 ## Tecnologias Utilizadas
 
-- React 19
+- React
 - Styled Components
 - Vite
 - ESLint para linting
@@ -112,6 +112,10 @@ npm run dev
 Isso iniciará o servidor de desenvolvimento Vite e você poderá visualizar o aplicativo navegando até `http://localhost:5173` (ou a porta que você alterou no arquivo de configurações do Vite) em seu navegador.
 
 ### Casos de Uso Comuns
+
+- Visualizar imagens clicando nelas e aumentando seu tamanho em um popup;
+- Favoritar imagens;
+- Imagens favoritas são salvas no localStorage;
 
 ### Solução de Problemas
 
