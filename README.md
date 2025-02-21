@@ -1,4 +1,4 @@
-# SPA em React - Sobre mim
+# SpaceApp - SPA em React + Vite
 
 ![Tela Principal](./screenshot/tela-principal.png)
 
