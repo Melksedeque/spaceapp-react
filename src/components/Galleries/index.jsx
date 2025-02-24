@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import FilterByTags from "./FilterByTags";
-import Gallery from "./Gallery";
-
 import pictures from "./fotos.json";
 import populars from "./populars.json";
 import { useState } from "react";
 import ZoomModal from "../ZoomModal";
-import { filterImages } from "../../utils/galleryUtils";
+import MainGallery from "./MainGallery";
+import PopularGallery from "./PopularGallery";
 
 const StyledGalleryContainer = styled.div`
   align-items: flex-start;
@@ -16,17 +15,10 @@ const StyledGalleryContainer = styled.div`
 `;
 
 export default function Galleries({ searchTerm }) {
-  const [galleryPictures, setGalleryPictures] = useState(pictures);
-  const [popularGalleryPictures, setPopularGalleryPictures] =
-    useState(populars);
+  const [galleryPictures] = useState(pictures);
+  const [popularPictures] = useState(populars);
   const [selectedPicture, setSelectedPicture] = useState(null);
   const [selectedTag, setSelectedTag] = useState(0);
-
-  const filteredPictures = filterImages(
-    galleryPictures,
-    selectedTag,
-    searchTerm
-  );
 
   const handleCloseModal = () => {
     setSelectedPicture(null);
@@ -36,19 +28,15 @@ export default function Galleries({ searchTerm }) {
     <>
       <FilterByTags selectedTag={selectedTag} onTagSelect={setSelectedTag} />
       <StyledGalleryContainer>
-        <Gallery
-          alignment="left"
-          title="Navegue pela galeria"
-          pictures={filteredPictures}
+        <MainGallery
+          pictures={galleryPictures}
+          selectedTag={selectedTag}
+          searchTerm={searchTerm}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
-          dataGallery="main"
         />
-        <Gallery
-          alignment="center"
-          title="Populares"
-          pictures={popularGalleryPictures}
+        <PopularGallery
+          pictures={popularPictures}
           onSelectedPicture={(picture) => setSelectedPicture(picture)}
-          dataGallery="popular"
         />
       </StyledGalleryContainer>
       <ZoomModal picture={selectedPicture} onClose={handleCloseModal} />
