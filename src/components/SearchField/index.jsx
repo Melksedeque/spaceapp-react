@@ -10,7 +10,8 @@ const StyledSearchBox = styled.div`
 `;
 
 const StyledSearchField = styled.input`
-  background: linear-gradient(#041833 20%, #04244f 100%);
+  /* background: linear-gradient(#041833 20%, #04244f 100%); */
+  background: #041833;
   border: 0 none;
   border-radius: 0.675rem;
   box-sizing: border-box;
