@@ -1,5 +1,7 @@
 # SpaceApp - SPA em React + Vite
 
+Este projeto é um aplicativo da web baseado em React que apresenta uma galeria de imagens relacionadas ao espaço com recursos de filtragem e pesquisa.
+
 ![Tela Principal](./screenshot/tela-principal.png)
 
 ## Menu
